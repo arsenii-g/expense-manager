@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="um.tds.vista.ImportarGastosController"
+      spacing="15" alignment="CENTER">
+
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <Label text="Importar gastos externos"
+           style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+
+    <ComboBox fx:id="comboFormato" promptText="Formato de archivo"/>
+
+    <HBox spacing="10">
+        <TextField fx:id="txtRuta" prefWidth="250"/>
+        <Button fx:id="btnExaminar" text="Examinar"/>
+    </HBox>
+
+    <Button fx:id="btnImportar" text="Importar gastos"/>
+
+</VBox>
+

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="um.tds.vista.EstadisticasController"
+      spacing="20" alignment="CENTER">
+
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <Label text="Estadísticas de Gasto" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+
+    <PieChart fx:id="grafico" legendSide="BOTTOM" labelsVisible="true" VBox.vgrow="ALWAYS"/>
+
+
+    <HBox spacing="10" alignment="CENTER">
+        <Label fx:id="lbltotal" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #2196F3;"/>
+        <Button text="🔄 Actualizar Gráfico" onAction="#cargarDatos"/>
+    </HBox>
+
+</VBox>

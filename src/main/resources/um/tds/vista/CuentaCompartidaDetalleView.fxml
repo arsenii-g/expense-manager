@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="um.tds.vista.CuentaCompartidaDetalleController"
+      spacing="15">
+
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <Label fx:id="lblNombreCuenta"
+           style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+
+    <Label text="Saldos de los participantes"/>
+
+    <TableView fx:id="tablaSaldos">
+        <columns>
+            <TableColumn text="Persona" fx:id="colPersona"/>
+            <TableColumn text="Porcentaje (%)" fx:id="colPorcentaje"/>
+            <TableColumn text="Saldo (€)" fx:id="colSaldo"/>
+        </columns>
+    </TableView>
+
+    <Label text="Gastos de la cuenta"/>
+
+    <TableView fx:id="tablaGastosCuenta">
+        <columns>
+            <TableColumn text="Fecha" fx:id="colFecha"/>
+            <TableColumn text="Descripción" fx:id="colDescripcion"/>
+            <TableColumn text="Cantidad (€)" fx:id="colCantidad"/>
+            <TableColumn text="Pagador" fx:id="colPagador"/>
+        </columns>
+    </TableView>
+
+    <HBox spacing="10" alignment="CENTER_RIGHT">
+        <Button fx:id="btnCalcularSaldos" text="Recalcular saldos"/>
+       
+    </HBox>
+
+
+</VBox>

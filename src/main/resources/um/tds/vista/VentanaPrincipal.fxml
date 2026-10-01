@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="um.tds.vista.VentanaPrincipalController">
+    
+    <top>
+        <MenuBar>
+            <Menu text="Archivo">
+                <MenuItem text="Importar..." onAction="#handleAbrirImportador"/>
+                <SeparatorMenuItem/>
+                <MenuItem text="Salir" onAction="#handleSalir"/>
+
+            </Menu>
+        </MenuBar>
+    </top>
+
+    <center>
+        <TabPane fx:id="tabPanePrincipal" tabClosingPolicy="UNAVAILABLE">
+           <Tab text="Mis Gastos">
+                <VBox spacing="10">
+                    <padding><Insets top="15" right="15" bottom="15" left="15"/></padding>
+                    
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <Button text="➕ Registrar" onAction="#handleNuevoGasto" 
+                                style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-font-weight: bold;"/>
+                       <Button text="Eliminar" onAction="#handleEliminarGasto"
+                                style="-fx-background-color: #F44336; -fx-text-fill: white;"/>
+                        <Button text="Editar" onAction="#handleEditarGasto" 
+                                style="-fx-background-color: #FF9800; -fx-text-fill: white;"/>
+                        
+                        <Region HBox.hgrow="ALWAYS" />
+
+                        <Label text="Cat:" />
+                        <ComboBox fx:id="comboFiltroCategoria" prefWidth="100" promptText="Todas"/>
+
+                        <Label text="Desde:" />
+                        <DatePicker fx:id="dpFiltroInicio" prefWidth="100" />
+                        
+                        <Label text="Hasta:" />
+                        <DatePicker fx:id="dpFiltroFin" prefWidth="100" />
+                    	<Label text="Meses:" />
+						<MenuButton fx:id="menuFiltroMeses" text="Seleccionar">
+    				    </MenuButton>
+    				    <Button text="Reset" onAction="#handleLimpiarFiltros" 
+        					style="-fx-background-color: #9E9E9E; -fx-text-fill: white;"/>
+                    
+                    </HBox>
+                    
+                    <TableView fx:id="tablaGastos" VBox.vgrow="ALWAYS">
+                        <columns>
+                            <TableColumn fx:id="colFecha" text="Fecha" prefWidth="100" />
+                            <TableColumn fx:id="colDesc" text="Descripción" prefWidth="250" />
+                            <TableColumn fx:id="colCat" text="Categoría" prefWidth="120" />
+                            <TableColumn fx:id="colCant" text="Cantidad (€)" prefWidth="100" />
+                            
+                           	<TableColumn fx:id="colCuenta" text="Cuenta" prefWidth="120" />
+       						<TableColumn fx:id="colPagador" text="Pagador" prefWidth="90" /> 
+                        </columns>
+                    </TableView>
+                </VBox>
+            </Tab>
+
+			<Tab text="Categorías">
+    			<VBox spacing="15">
+        			<padding><Insets top="15" right="15" bottom="15" left="15"/></padding>
+        			<Label text="Gestión de Categorías" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+        
+        			<HBox spacing="10" alignment="CENTER_LEFT">
+            			<Button text="➕ Nueva Categoría" onAction="#handleNuevaCategoria" 
+                    			style="-fx-background-color: #2196F3; -fx-text-fill: white;"/>
+            			<Button text="🗑 Eliminar Seleccionada" onAction="#handleEliminarCategoria" 
+                    			style="-fx-background-color: #f44336; -fx-text-fill: white;"/>
+        			</HBox>
+
+        			<ListView fx:id="listaCategoriasPrincipal" VBox.vgrow="ALWAYS" />
+    			</VBox>
+			</Tab>
+
+            <Tab text="Cuentas Compartidas">
+                <fx:include source="CuentasCompartidasView.fxml" />
+            </Tab>
+            
+            <Tab text="Gráficos y Estadísticas">
+                <fx:include source="EstadisticasView.fxml" />
+            </Tab>
+            
+            <Tab text="Calendario">
+                <fx:include source="CalendarioView.fxml" />
+            </Tab>
+
+            <Tab text="Límites y Alertas">
+                <fx:include source="LimitesView.fxml" />
+            </Tab>
+
+            <Tab text="Notificaciones">
+                <VBox spacing="10">
+                    <padding><Insets top="15" right="15" bottom="15" left="15"/></padding>
+                    <Label text="Historial de Alertas Superadas" style="-fx-font-weight: bold; -fx-font-size: 14px;"/>
+                    <ListView fx:id="listaNotificaciones" VBox.vgrow="ALWAYS" />
+                    <Button text="Limpiar Historial" onAction="#handleLimpiarNotificaciones"/>
+                </VBox>
+            </Tab>
+        </TabPane>
+    </center>
+    
+    <bottom>
+        <HBox spacing="10" style="-fx-background-color: #f4f4f4; -fx-border-color: #cccccc; -fx-border-width: 1 0 0 0;">
+            <padding><Insets top="5" right="10" bottom="5" left="10"/></padding>
+            <Label fx:id="lblStatus" text="Listo" />
+        </HBox>
+    </bottom>
+</BorderPane>

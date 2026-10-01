@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="um.tds.vista.CuentasCompartidasController">
+
+    <top>
+        <HBox spacing="10" alignment="CENTER_RIGHT">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+            <Button fx:id="btnNuevaCuenta" text="➕ Nueva cuenta"/>
+            <Button fx:id="btnVerDetalle" text="👁 Ver detalle"/>
+        </HBox>
+    </top>
+
+    <center>
+        <TableView fx:id="tablaCuentas">
+            <columns>
+                <TableColumn text="Nombre" fx:id="colNombre"/>
+                <TableColumn text="Participantes" fx:id="colParticipantes"/>
+            </columns>
+        </TableView>
+    </center>
+
+
+</BorderPane>

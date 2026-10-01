@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="um.tds.vista.VentanaCrearGastoController"
+      spacing="15" alignment="CENTER"
+      prefWidth="350" prefHeight="400">
+
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+    
+
+    <Label text="Nuevo Gasto" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+
+    <VBox spacing="5">
+        <Label text="Concepto / Descripción:"/>
+        <TextField fx:id="txtDescripcion" promptText="Ej: Compra Mercadona"/>
+    </VBox>
+
+    <VBox spacing="5">
+        <Label text="Cantidad (€):"/>
+        <TextField fx:id="txtCantidad" promptText="0.00"/>
+    </VBox>
+
+    <VBox spacing="5">
+        <Label text="Fecha:"/>
+        <DatePicker fx:id="dateFecha" maxWidth="Infinity"/>
+    </VBox>
+
+    <VBox spacing="5">
+        <Label text="Categoría:"/>
+        <ComboBox fx:id="comboCategoria" maxWidth="Infinity" promptText="Selecciona..."/>
+    </VBox>
+
+    <HBox spacing="10" alignment="CENTER" style="-fx-padding: 10 0 0 0;">
+        <Button text="Cancelar" fx:id="btnCancelar" cancelButton="true"/>
+        <Button text="Guardar Gasto" fx:id="btnGuardar" defaultButton="true" 
+                style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-font-weight: bold;"/>
+    </HBox>
+
+</VBox>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+
+<GridPane xmlns="http://javafx.com/javafx"
+          xmlns:fx="http://javafx.com/fxml"
+          fx:controller="um.tds.vista.GastoFormController"
+          hgap="10" vgap="10"
+          alignment="CENTER"
+          prefWidth="400">
+
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <Label text="Fecha:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+    <DatePicker fx:id="dpFecha" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+    <Label text="Descripción:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+    <TextField fx:id="txtDescripcion" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+    <Label text="Cantidad (€):" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+    <TextField fx:id="txtCantidad" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+    <Label text="Categoría:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+    <ComboBox fx:id="comboCategoria" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+    <Label text="Cuenta Compartida:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+    <ComboBox fx:id="comboCuenta" prefWidth="200" promptText="(Opcional) Seleccionar..." 
+              GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+
+    <Label text="Pagado por:" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+    <ComboBox fx:id="comboPagador" prefWidth="200" disable="true" 
+              GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+              
+    <HBox spacing="10" alignment="CENTER_RIGHT"
+          GridPane.rowIndex="6" GridPane.columnIndex="1">
+        <Button fx:id="btnGuardar" text="Guardar"/>
+        <Button fx:id="btnCancelar" text="Cancelar"/>
+    </HBox>
+
+</GridPane>
